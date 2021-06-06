@@ -1,0 +1,146 @@
+$margin :1em;
+
+.App {
+  text-align: center;
+}
+
+.ChessBoardWrapperDiv {
+	margin : $margin;
+	display : flex;
+	flex-direction : row;
+	justify-content: center;
+}
+.ChessBoard {
+	display : flex;
+	flex-direction: column-reverse;
+	justify-content: flex-start;
+}
+
+.Rank {
+	display : flex;
+	flex-direction: row;	
+}
+
+%Piece {
+	background: url('pngkey-chess-board-png-1906157.png');
+	background-size: 19em;
+}
+
+%WhitePiece {
+	@extend %Piece;
+	background-position-y: -4em;
+}
+
+%BlackPiece {
+	@extend %Piece;
+}
+
+
+%Bishop {
+	background-position-x: -3em;
+}
+%Queen {
+	background-position-x: -6.5em;
+}
+%King {
+	background-position-x: -9.5em;
+}
+%Knight {
+	background-position-x: -13.2em;
+}
+%Pawn {
+	background-position-x: -35em;
+}
+
+.WhiteRook {
+	
+	@extend %WhitePiece;
+}
+.WhiteBishop {
+	@extend %Bishop;
+	@extend %WhitePiece;
+}
+.WhiteQueen {
+	@extend %Queen;
+	@extend %WhitePiece;
+}
+.WhiteKing {
+	@extend %King;
+	@extend %WhitePiece;
+}
+.WhiteKnight {
+	@extend %Knight;
+	@extend %WhitePiece;
+}
+.WhitePawn {
+	@extend %Pawn;
+	@extend %WhitePiece;
+}
+
+.BlackRook {
+	
+	@extend %BlackPiece;
+}
+.BlackBishop {
+	@extend %Bishop;
+	@extend %BlackPiece;
+}
+.BlackQueen {
+	@extend %Queen;
+	@extend %BlackPiece;
+}
+.BlackKing {
+	@extend %King;
+	@extend %BlackPiece;
+}
+.BlackKnight {
+	@extend %Knight;
+	@extend %BlackPiece;
+}
+.BlackPawn {
+	@extend %Pawn;
+	@extend %BlackPiece;
+}
+
+
+%Square {
+	border: black 1px solid;
+	width : 3em;
+	height: 3em;
+	overflow: hidden;
+	
+	&:hover {
+		background-color: #d4ffa2;
+	}
+}
+
+.BlackSquare {
+	@extend %Square;
+	background-color: #9a9a9a;
+}
+
+.WhiteSquare {
+	@extend %Square;
+	background-color: #cecccc;
+}
+
+.SquareFirstClicked {
+	background-color : #fafbbe;
+}
+
+.SquareSecondClicked {
+	background-color : red;
+}
+
+.SquareLetter {
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.WhiteLetter {
+	color : white;
+}
+
+.BlackLetter {
+	color : black;
+}
