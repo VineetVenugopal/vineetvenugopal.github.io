@@ -118,3 +118,8 @@ export interface IStateChangeAction {
 export enum ActionType {
 	SquareClick
 }
+
+export interface IContext {
+	isSquareImgType : boolean;
+	onSquareTypeToggle? : () => void;
+}
